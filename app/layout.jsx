@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
-import { Roboto } from "next/font/google";
+import "@fontsource/montserrat"; // Defaults to weight 400 with normal style
+import "@fontsource/montserrat/700.css"; // Weight 700
 import "./globals.css";
 import Header from "@/components/Header";
 

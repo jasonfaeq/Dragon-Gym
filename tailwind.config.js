@@ -20,15 +20,22 @@ module.exports = {
       },
     },
     extend: {
-      colors: {
-        primary: '#212121', // New primary color
-        accent: {        DEFAULT: '#e04024', // New default accent color
-          hover: '#e36222', 
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
+      colors: { 
+        navy: '#0A0E27',
+        darkGray: '#2F4F4F', // or use 'black' if you prefer
+        accent: {        DEFAULT: '#008080', // New default accent color
+          hover: '#006666', 
         },
         accentalt: {        DEFAULT: '#ff7e67', // New alternate accent color
           hover: '#ff6b54', 
         },
       },
+      backgroundImage: theme => ({
+        'navy-gradient': `linear-gradient(to bottom, ${theme('colors.navy')}, ${theme('colors.darkGray')})`,
+      }),
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
