@@ -4,18 +4,21 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
 import { SiDungeonsanddragons } from "react-icons/si";
+import { CiDumbbell } from "react-icons/ci";
 
 const Header = () => {
   return (
     <header className="bg-gradient-to-b from-navy to-gray-900 w-full h-full font-sans">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-4xl py-8">
-          <Link href="/">
-            <div className="flex items-center gap-2">
-              <SiDungeonsanddragons className="text-4xl text-accent" />
-              Dragon Gym
-              <SiDungeonsanddragons className="text-4xl text-accent" />
-            </div>
+        <h1 className="text-white text-4xl py-4">
+          <Link
+            href="/"
+            className="text-3xl text-accent font-semibold tracking-[0.1rem] flex gap-x-2 relative"
+          >
+            <SiDungeonsanddragons className="w-8 h-8 text-accent" />
+            DRAGON G<span className="font-sans text-gray-300">Y</span>M
+            <CiDumbbell className="w-5 h-4 text-accent -rotate-45 absolute top-[-8px] left-[73%] translate-x-[-43%]" />
+            <SiDungeonsanddragons className="w-8 h-8 text-accent" />
           </Link>
         </h1>
         <div className="hidden xl:flex items-center gap-8">

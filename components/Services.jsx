@@ -6,6 +6,11 @@ import { PiBoxingGloveFill } from "react-icons/pi";
 import { GrYoga } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Link from "next/link";
 
 const Services = () => {
@@ -78,7 +83,7 @@ const Services = () => {
   return (
     <div>
       {/* Card Component for Services */}
-      <div className="w-full h-auto flex items-center justify-center flex-col lg:py-16 md:py-14 sm:py-12 py-10 lg:px-24 md:px-16 sm:px-6 px-6">
+      <div className="hidden md:flex w-full h-auto items-center justify-center flex-col lg:py-16 md:py-14 py-10 lg:px-24 md:px-16 px-6">
         <h6 className="text-lg font-medium text-gray-200 flex items-center gap-x-2 mb-6">
           <CiDumbbell className="text-accent" />
           Our Services
@@ -113,6 +118,49 @@ const Services = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="xl:hidden md:hidden">
+        <Swiper
+          spaceBetween={10}
+          centeredSlides={true}
+          loop={true}
+          navigation={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper w-[90%] h-[90vh]"
+        >
+          {servicesData.map((service) => (
+            <SwiperSlide
+              key={service.id}
+              className="lg:w-[20%] md:w-[40%] sm:w-[45%] w-[full] lg:h-[50vh] md:h-[53vh] sm:h-[58vh] h-[60vh] rounded-xl bg-black relative overflow-hidden cursor-pointer z-10 hover:-translate-y-2 ease-out duration-500"
+              style={{
+                backgroundImage: `url(${service.serviceImg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className="w-full h-full bg-gradient-to-b from-gray-500 to-black absolute top-0 left-0 z-0 opacity-55"></div>
+              <div className="w-full h-full flex items-center justify-center flex-col text-white p-4 z-10 relative">
+                <div className="w-14 h-14 rounded-full bg-accent/50 border-4 border-accent flex items-center justify-center mb-5 text-2xl">
+                  {service.icon}
+                </div>
+                <h1 className="text-xl text-gray-100 font-semibold text-center mb-4">
+                  {service.title}
+                </h1>
+                <p className="text-base text-gray-400 font-normal text-center mb-4">
+                  {service.desc}
+                </p>
+                <Link href="/services" className="font-bold text-accent/70">
+                  Read more
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ module.exports = {
       },
       colors: { 
         navy: '#0A0E27',
-        darkGray: '#2F4F4F', // or use 'black' if you prefer
+        darkGray: '#0c2030', // or use 'black' if you prefer
         accent: {        DEFAULT: '#008080', // New default accent color
           hover: '#006666', 
         },
