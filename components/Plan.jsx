@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Plan = () => {
   return (
-    <>
+    <div name="plan">
       <div className="w-full h-auto flex items-center justify-center flex-col lg:py-16 md:py-14 sm:py-12 py-10 lg:px-24 md:px-16 sm:px-6 px-6">
         <h6 className="text-lg font-medium text-gray-200 flex items-center gap-x-2 mb-6">
           <CiDumbbell className="text-accent" />
@@ -171,7 +171,7 @@ const Plan = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

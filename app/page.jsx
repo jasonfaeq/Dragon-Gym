@@ -21,13 +21,10 @@ export default function Home() {
       <SwiperHero />
       <Stats />
       <AboutUs />
-      <BMI />
-      <Services />
-      <Banner />
       <Trainers />
+      <Banner />
+      <BMI />
       <Popular />
-      <Plan />
-      <Footer />
     </div>
   );
 }
