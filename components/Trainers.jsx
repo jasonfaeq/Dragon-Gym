@@ -28,7 +28,7 @@ const Trainers = () => {
     {
       id: 1,
       name: "Jason Faeq",
-      image: "/images/trainer1.png",
+      image: "/images/trainer1.jpg",
       role: "Gym Owner",
       description:
         "Jason is a certified personal trainer with over 10 years of experience in the fitness industry. He specializes in weight loss and strength training.",
